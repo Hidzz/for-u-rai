@@ -1,0 +1,133 @@
+body {
+    background-color: #d2b48c;
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: #8b4513;
+    color: #f5deb3;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.letter-container {
+    background: linear-gradient(45deg, #f5deb3, #faebd7);
+    border: 2px solid #8b4513;
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.letter-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path d="M0 0L100 100M100 0L0 100" stroke="rgba(139, 69, 19, 0.1)" stroke-width="1"/></svg>');
+    pointer-events: none;
+}
+
+.letter-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4b3832;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b3832;
+    text-align: justify;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #4b3832;
+    margin-left: 2px;
+    animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.letter-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.next-page {
+    display: inline-block;
+    color: #f5deb3;
+    background-color: #8b4513;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.next-page:hover {
+    background-color: #a0522d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.play-button {
+    background-color: #faebd7;
+    color: #8b4513;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #faebd7;
+}
+
+@media (max-width: 768px) {
+    .letter-container {
+        padding: 20px;
+    }
+
+    .letter-title {
+        font-size: 1.5rem;
+    }
+
+    .letter-content {
+        font-size: 1rem;
+    }
+}
